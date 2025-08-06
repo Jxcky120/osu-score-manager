@@ -1,6 +1,5 @@
 /**
  * ScoreManager - Handles sorting, searching, and filtering of osu! scores
- * Implements better design patterns and separation of concerns
  */
 class ScoreManager {
     static SORT_ORDER = {
