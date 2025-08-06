@@ -1,0 +1,328 @@
+:root {
+    --gradientColor1: #16161f;
+    --gradientColor2: #16161f;
+    --dashedLineColor: #222222;
+    --outlineColor: #222222;
+    --hundredColor: #6EF063;
+    --fiftyColor: #F0E263;
+    --missColor: #F06363;
+    --threehundredcolor: #63b8f0;
+}
+
+@font-face {
+    font-family: 'BalooBold';
+    src: url('../resources/Baloo2-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BalooMedium';
+    src: url('../resources/Baloo2-Medium.ttf') format('truetype');
+}
+
+.score-list * {
+    font-family: 'BalooBold';
+}
+
+.score-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.main-container {
+    position: relative;
+    width: 99%;
+    border-radius: 10px;
+    border: .2rem solid var(--outlineColor);
+    display: flex;
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--gradientColor1), var(--gradientColor2));
+}
+
+.border-top-0 {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.border-bottom-0 {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.border-left-0 {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.border-right-0 {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transform: translateY(-15%);
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bg-overlay {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    left: 0;
+    right: 0;
+    transform: translateY(-6%);
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.bg-underlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transform: translateY(-5%);
+    background: linear-gradient(to bottom, var(--gradientColor1), var(--gradientColor2));
+}
+
+.left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: .3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.middle {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--dashedLineColor);
+    padding: 5px;
+    overflow: hidden;
+}
+
+.right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--dashedLineColor);
+}
+
+.song-info {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.title {
+    position: relative;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+.diff {
+    font-family: 'BalooMedium';
+    color: #c2c2c2;
+    position: relative;
+    white-space: nowrap;
+}
+
+.map-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+}
+
+.sr-container {
+    align-self: flex-end;
+    height: fit-content;
+    background-color: #F06363;
+    padding: .15rem 0.8rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sr-container span {
+    font-size: 1.1rem;
+    transform: translateY(1px);
+    color: #ffdd55;
+}
+
+.sr-star {
+    aspect-ratio: 1 / 1;
+    height: 1rem;
+    display: flex;
+}
+
+.map-stats {
+    align-self: flex-end;
+    display: flex;
+    font-size: 1.1rem;
+}
+
+.map-stats div:last-child {
+    margin-right: 0;
+}
+
+.bpm,
+.cs,
+.ar,
+.od,
+.hp {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: .25rem;
+    line-height: .9;
+    width: 1.5rem;
+    transform: translateY(3px);
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hit-errors {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    border-bottom: 3px dashed var(--dashedLineColor);
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hit {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    align-items: center;
+}
+
+.hit-icon {
+    width: 2rem;
+    height: 7px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+}
+
+.blue {
+    background-color: var(--threehundredcolor)
+}
+
+.green {
+    background-color: var(--hundredColor);
+}
+
+.yellow {
+    background-color: var(--fiftyColor);
+}
+
+.red {
+    background-color: var(--missColor);
+}
+
+.pp {
+    position: relative;
+    display: flex;
+
+    align-items: center;
+    width: 80%;
+    height: 40%;
+    gap: 5px;
+    justify-content: center;
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.right-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    padding: 0 15px;
+    height: 40%;
+}
+
+.download-replay,
+.open-replay {
+    width: 20%;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3a3a4a;
+    transition: all 0.2s;
+    border: 1px solid var(--outlineColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.download-replay:hover,
+.open-replay:hover {
+    background-color: #4a4a5a;
+    border: 1px solid rgb(41, 33, 25);
+}
+
+.download-replay:active,
+.open-replay:active {
+    background-color: #848485;
+    border: 1px solid rgb(211, 130, 49);
+}
+
+.download-replay svg {
+    scale: 0.4;
+}
+
+.ppCurrent {
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ppFC {
+    white-space: nowrap;
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.slash {
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+
+.title-wrapper {
+    display: flex;
+}
+
+.diff-wrapper {
+    display: flex;
+}
+
+#date {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.8rem;
+    color: #7f7f83;
+}

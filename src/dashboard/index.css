@@ -1,0 +1,357 @@
+body {
+  font-family: 'MPLUSRounded1c-ExtraBold';
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  min-width: 0;
+}
+
+@font-face {
+  font-family: 'MPLUSRounded1c-ExtraBold';
+  src: url('../dashboard/resources/MPLUSRounded1c-ExtraBold.ttf') format('truetype');
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  background-color: #16161f;
+  width: 360px;
+  padding: 20px;
+}
+
+.container>div {
+  height: calc( 100vh - 40px);
+}
+
+.score-container {
+  background-color: #1f1f2e;
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebar>h1 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #3a3a4a;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'MPLUSRounded1c-ExtraBold';
+}
+
+.score-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.options{
+  color: black;
+}
+
+.options > button {
+  width: 140px;
+  text-align: center;
+  height: 35px;
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+  background-color: #3a3a4a;
+  border-radius: 7px;
+  transition: all 0.2s;
+  border: 2px solid black;
+}
+
+.options > button:hover {
+  background-color: #4a4a5a;
+  border: 2px solid rgb(41, 33, 25)
+}
+
+.options > button:active {
+  background-color: #848485;
+  border: 2px solid rgb(211, 130, 49);
+}
+
+#filePath{
+  width: 100%;
+  color: #7f7f83;
+  padding: 5px 0;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.loader-container {
+  position: absolute;
+  text-align: center;
+  left: calc( (100vw - 290px) / 2 + 290px);
+  top: 2em;
+  display: none;
+}
+
+.loader {
+  position: relative;
+  text-align: center;
+  margin-left: -100px;
+}
+
+.loader::after ,
+.loader::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px #0075ff;
+  border-style: dotted solid dotted solid;
+  animation: turn-left 1.5s linear infinite;
+}
+
+
+@keyframes turn-right {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+@keyframes turn-left {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(-360deg);
+  }
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.page-system {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.page-button {
+  width: 140px;
+  height: 35px;
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+  background-color: #3a3a4a;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.page-button:hover {
+  background-color: #4a4a5a;
+  border: 2px solid rgb(41, 33, 25);
+}
+
+.page-button:active {
+  background-color: #848485;
+  border: 2px solid rgb(211, 130, 49);
+}
+
+.page-input-container > p{
+  color: #7f7f83;
+  font-size: 0.9rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#pageInput{
+  color:white;
+  background-color: #3a3a4a;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  width: 50px;
+}
+
+.sort-by, .search {
+  margin-bottom: 15px;
+}
+
+.sort-by h2, .search h2, .users h2 {
+  color: #dadada;
+  font-size: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-bottom: 5px;
+}
+
+select#sort{
+  width: calc(100% - 40px);
+}
+
+.sort-by-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+#toggle-sort{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#toggle-sort svg{
+  scale:0.5;
+}
+
+select, input[type="text"], .reset-checkbox, .reset-cache{
+  width: 100%;
+  height: 35px;
+  color: white;
+  font-size: 0.9rem;
+  background-color: #3a3a4a;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+select:hover, input[type="text"]:hover {
+  background-color: #4a4a5a;
+  border: 2px solid rgb(41, 33, 25);
+}
+
+select:focus, input[type="text"]:focus {
+  background-color: #848485;
+  border: 2px solid rgb(211, 130, 49);
+  outline: none;
+}
+
+.users {
+  margin-top: 10px;
+  gap: 5px;
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.users > input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.toggle-sort {
+  width: 35px; /* Adjust size as needed */
+  height: 35px;
+  color: white;
+  font-size: 0.9rem;
+  background-color: #3a3a4a;
+  border-radius: 5px; /* Slight rounding for a modern look */
+  border: 2px solid black;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.toggle-sort:hover, .reset-checkbox:hover, .reset-cache:hover {
+  background-color: #4a4a5a;
+  border: 2px solid rgb(41, 33, 25);
+}
+
+.toggle-sort:active, .reset-checkbox:active, .reset-cache:active {
+  background-color: #848485;
+  border: 2px solid rgb(211, 130, 49);
+}
+
+.search > p{
+  width: 100%;
+  color: #7f7f83;
+  padding: 5px 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+}
+
+.user-checkbox-container{
+  display: flex;
+  overflow-y: auto;
+  width: calc( 100% - 10px );
+  flex-direction: column;
+  height: 80%;
+  gap: 3px;
+  padding: 5px;
+}
+
+.filter{
+  height: 90%;
+}
+
+.user-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spacing between checkbox and label */
+  color: #7f7f83;
+  font-size: 0.9rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.user-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: #3a3a4a;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.user-checkbox input[type="checkbox"]:hover {
+  background-color: #4a4a5a;
+  border: 2px solid rgb(41, 33, 25);
+}
+
+.user-checkbox input[type="checkbox"]:checked {
+  background-color: #848485;
+  border: 2px solid rgb(211, 130, 49);
+}
+
+.user-checkbox input[type="checkbox"]::after {
+  content: "✔";
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.user-checkbox input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+.user-checkbox label {
+  cursor: pointer;
+}
